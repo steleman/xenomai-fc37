@@ -1,0 +1,84 @@
+--- a/include/uapi/evl/observable.h
++++ b/include/uapi/evl/observable.h
+@@ -7,6 +7,7 @@
+ #ifndef _EVL_UAPI_OBSERVABLE_H
+ #define _EVL_UAPI_OBSERVABLE_H
+
++#include <linux/types.h>
+ #include <uapi/evl/types.h>
+
+ #define EVL_OBSERVABLE_DEV	"observable"
+--- a/include/uapi/evl/clock.h
++++ b/include/uapi/evl/clock.h
+@@ -7,6 +7,7 @@
+ #ifndef _EVL_UAPI_CLOCK_H
+ #define _EVL_UAPI_CLOCK_H
+
++#include <linux/types.h>
+ #include <uapi/evl/types.h>
+
+ #define EVL_CLOCK_MONOTONIC_DEV		"monotonic"
+--- a/include/uapi/evl/mutex.h
++++ b/include/uapi/evl/mutex.h
+@@ -9,6 +9,7 @@
+ #ifndef _EVL_UAPI_MUTEX_H
+ #define _EVL_UAPI_MUTEX_H
+
++#include <linux/types.h>
+ #include <uapi/evl/types.h>
+
+ static inline int
+--- a/include/uapi/evl/poll.h
++++ b/include/uapi/evl/poll.h
+@@ -7,6 +7,7 @@
+ #ifndef _EVL_UAPI_POLL_H
+ #define _EVL_UAPI_POLL_H
+
++#include <linux/types.h>
+ #include <uapi/evl/types.h>
+
+ #define EVL_POLL_DEV		"poll"
+--- a/include/uapi/evl/sched.h
++++ b/include/uapi/evl/sched.h
+@@ -8,6 +8,7 @@
+ #ifndef _EVL_UAPI_SCHED_H
+ #define _EVL_UAPI_SCHED_H
+
++#include <linux/types.h>
+ #include <uapi/evl/types.h>
+
+ #define EVL_CPU_OOB      (1 << 0)
+--- a/include/uapi/evl/net/socket.h
++++ b/include/uapi/evl/net/socket.h
+@@ -7,6 +7,7 @@
+ #ifndef _EVL_UAPI_NET_SOCKET_H
+ #define _EVL_UAPI_NET_SOCKET_H
+
++#include <linux/types.h>
+ #include <uapi/evl/types.h>
+ #include <uapi/evl/fcntl.h>
+
+--- a/include/uapi/evl/types.h
++++ b/include/uapi/evl/types.h
+@@ -23,7 +23,7 @@
+  * Strip all reserved bits from the handle, only retaining the fast
+  * index value.
+  */
+-static inline fundle_t evl_get_index(fundle_t handle)
++static __inline__ fundle_t evl_get_index(fundle_t handle)
+ {
+ 	return handle & ~EVL_HANDLE_INDEX_MASK;
+ }
+--- a/usr/include/Makefile
++++ b/usr/include/Makefile
+@@ -25,6 +25,10 @@
+ # Sorted alphabetically.
+ no-header-test += asm/ucontext.h
+ no-header-test += drm/vmwgfx_drm.h
++no-header-test += evl/clock.h
++no-header-test += evl/mutex.h
++no-header-test += evl/monitor.h
++no-header-test += evl/observable.h
+ no-header-test += linux/am437x-vpfe.h
+ no-header-test += linux/coda.h
+ no-header-test += linux/cyclades.h
