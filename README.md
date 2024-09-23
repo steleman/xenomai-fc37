@@ -1,6 +1,6 @@
 # Xenomai4 / Dovetail / EVL on Fedora 37
 
-This is a port of [Xenomai 4 / EVL](https://v4.xenomai.org/) to Linux Kernel 6.10.10 for Fedora 39.
+This is a port of [Xenomai 4 / EVL](https://v4.xenomai.org/) to Linux Kernel 6.10.10 for Fedora 37.
 
 The `kernel-6.5.13-100.fc37.src.rpm` found here comes directly from Fedora. You do not need to unpack it, I've already done that. I've included it here for completeness.
 
