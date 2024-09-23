@@ -24,5 +24,7 @@ Building a Xenomai4-enabled Fedora Kernel is quite simple:
 
 5. The patch that imports and applies all the Xenomai changes, found here, is named `patch-6.5-dovetail-evl.patch`.
 
-6. I've done some preliminary testing on `x86_64`, but not fully comprehensive testing. This is an ongoing project for me, and I will be doing more testing along the way, which means it's very likely there will be updates.
+6. Don't forget to disable EFI Secure Boot to install the RPMs. You can use the `install-xenomai-kernel.sh` script found here to install the RPMs after they are built.
+
+7. I've done some preliminary testing on `x86_64`, but not fully comprehensive testing. This is an ongoing project for me, and I will be doing more testing along the way, which means it's very likely there will be updates.
 
