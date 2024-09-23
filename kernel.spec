@@ -311,7 +311,7 @@ Summary: The Linux kernel
 %if %{with_verbose}
 %define make_opts V=1
 %else
-%define make_opts V=1
+%define make_opts -s
 %endif
 
 %if %{with toolchain_clang}
